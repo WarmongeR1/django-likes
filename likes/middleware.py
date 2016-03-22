@@ -19,7 +19,7 @@ class SecretBallotUserIpUseragentMiddleware(SecretBallotIpUseragentMiddleware):
                 try:
                     return md5(s).hexdigest()
                 except TypeError:
-                    return md5(s.encode('utf-8').hexdigest())
+                    return md5(s.encode('utf-8')).hexdigest()
             except KeyError:
                 return None
             
